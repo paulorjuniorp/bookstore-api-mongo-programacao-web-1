@@ -8,6 +8,8 @@ const conexao = await pool();
 
 import rotaLivro from "./rotas/livro.js";
 import rotaFavorito from "./rotas/favorito.js";
+import rotaAutor from "./rotas/autor.js";
+
 
 conexao.on("error", (erro) => {
     console.error("erro de conexão", erro)
@@ -24,6 +26,8 @@ app.use(express.json())
 app.use('/livros', rotaLivro);
 
 app.use('/favoritos', rotaFavorito)
+
+app.use('/autores', rotaAutor)
 
 app.listen(port, () => {
     console.log(`Escutando a porta ${port}`);

@@ -1,25 +1,25 @@
-import autores from "../models/Autores.js";
+import {autor} from "../models/Autores.js";
 
 async function getTodosAutores() {
-    const listaAutores = await autores.find({});
+    const listaAutores = await autor.find({});
     return listaAutores;
 }
 
 async function getAutorPorId(id) {
-    const listaAutores = await autores.findById(id);
+    const listaAutores = await autor.findById(id);
     return listaAutores;
 }
 
 async function insereAutor(autorNovo) {
-    await livros.create(autorNovo);
+    await autor.create(autorNovo);
 }
 
 async function modificaAutor(modificacoes, id) {
-    await livros.findByIdAndUpdate(id, modificacoes);
+    await autor.findByIdAndUpdate(id, modificacoes);
 }
 
 async function removeAutor(id) {
-    await livros.findByIdAndDelete(id);
+    await autor.findByIdAndDelete(id);
 }
 
 
